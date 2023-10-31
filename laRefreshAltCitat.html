@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .quote
+        {
+            width:400px;
+            height:150px;
+            padding: 20px;
+            border-radius:3%;
+
+            background-color:#F7C28e;
+        }
+    </style>
+
+
+    <div class="quote" id="quote"></div>
+
+
+    <script>
+
+        var quote = [
+        ' Eşecul nu este căderea, ci actul de a nu te ridica.',
+        ' Toate visele noastre pot deveni realitate dacă avem curajul de a le urma.',
+        ' Prea mulți dintre noi nu ne trăim visurile pentru că ne trăim temerile.',
+        ' Ai încredere și acționează ca și cum ar fi imposibil să eșuezi.',
+        ' Victoria aparține celui perseverent.',
+        ' Perseverența este răbdare concentrată.',
+        ' Setează-ți obiective înalte și nu te opri până nu ajungi acolo.',
+        ' Temerile cu care nu ne confruntăm devin limitele noastre',
+        ' Curajul înseamnă rezistență la frică, stăpânirea fricii, nicidecum absența fricii',
+        ' Pentru orice realizare, primul pas este curajul.',
+        ];
+
+        var quoteDiv= document.getElementById('quote');
+        function showQuote()
+        {
+            quoteDiv.innerHTML=quote[0];
+        }
+
+        function generateRandomQuoteIndex()
+        {
+            return Math. floor(Math. random()*100 )%quote.length;
+        }
+
+        function showRandomQuote()
+        {
+            quoteDiv.innerHTML=quote[generateRandomQuoteIndex()];
+        }
+
+        showRandomQuote();
+        setInterval(showRandomQuote,1000*60);
+    </script>
+
+</body>
+</html>
